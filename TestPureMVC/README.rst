@@ -1,15 +1,15 @@
-============================
-关于pureMVC的几个问题与解答
-============================
+==========================================
+关于pureMVC的notification几个问题与解答
+==========================================
 
 
 因为工作需要,最近也开始学习和使用 `pureMVC`_ , 之前也写过一个 `pureMVC Hello World教程`_,
-算是开始入门这个框架和AS这种语言.经过两周多的学习和使用,生出了几个疑问和公司的做AS的同事
+算是开始入门这个框架和AS这种语言.经过两周多的学习和使用,生出了几个疑问, 和公司的做AS的同事
 沟通时,发觉他也并不能清楚地说出所以然来,所以决定自行研究这些问题,并尝试给出解答.
 
 问题大致有下面几个:
 
-1. 如果一个notification有多个订阅者,那么这多个订阅者之前的执行顺序是怎么样了?
+1. 如果一个notification有多个订阅者,那么这多个订阅者之前的执行顺序是怎么样的?
 2. 一段代码在执行时,如果发出一个notification,是等待相应的notification订阅者处理结束再继续呢,还是
    直接继续,相应的notification订阅者异步地执行?
 3. 一个notification的多个订阅者之间的执行是异步的,还是顺序执行的?
@@ -156,8 +156,12 @@ sendNotification(Test) -> CMediator(Test) -> sendNotification(Second) ->CMediato
 总结
 ===========
 
-最后,通过对本文开始4个问题的分析,弄清楚了 `pureMVC`_ 核心的notification机制的几个
+通过对本文开始4个问题的分析,弄清楚了 `pureMVC`_ 核心的notification机制的几个
 核心问题,对于后续的工作和学习都是很有益处的.
 
 
 
+
+.. _pureMVC: http://puremvc.org/
+.. _pureMVC Hello World教程: http://towerjoo.blog.techweb.com.cn/archives/142.html
+.. _TestPureMVC: https://github.com/topman/blog_code/tree/master/TestPureMVC
