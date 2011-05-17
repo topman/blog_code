@@ -1,5 +1,7 @@
 package controllers 
 {
+	import events.ApplicationEvent;
+	import events.LoginEvent;
 	import org.robotlegs.mvcs.Command;
 	/**
 	 * 初始化controller的command
@@ -10,7 +12,11 @@ package controllers
 		
 		override public function execute():void 
 		{
-			trace("called");
+			// 相关的controller注册点
+			commandMap.mapEvent(ApplicationEvent.SHOW_LOGIN_FORM, ShowLoginFormCommand, ApplicationEvent);
+			commandMap.mapEvent(LoginEvent.LOGIN, LoginCommand, LoginEvent);
+			
+			dispatch(new ApplicationEvent(ApplicationEvent.CONFIG_SERVICE));
 		}
 		
 	}

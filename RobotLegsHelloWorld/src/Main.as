@@ -4,7 +4,7 @@ package
 	import flash.events.Event;
 	
 	/**
-	 * ...
+	 * 整个程序的入口
 	 * @author Tower Joo <zhutao@lehu-tech.com>
 	 */
 	public class Main extends Sprite 
@@ -20,7 +20,7 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			context = new MainContext(this);
-			context.startup();
+			// 注意：不需要手动调用context.statup()，否则一些某些事件会触发2次
 		}
 		
 	}
